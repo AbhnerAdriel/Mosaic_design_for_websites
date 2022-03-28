@@ -1,0 +1,69 @@
+/* RESET: */
+* {margin: 0; padding: 0; border: 0; box-sizing: border-box; font-family: 'Open Sans', sans-serif;}
+
+/* CLASSES E TAGAS ESPECIAIS: */
+.clear {clear: both;}
+.container-size {width: 100%; max-width: 1400px; margin: 0 auto;}
+
+/* HEADER: */
+header {padding: 10px 3%;}
+header .logo {float: left; width: 232px;}
+header .logo img  {width: 100%;}
+header .menu, header .menu-mobile {float: right; margin-top: 21px;}
+header .menu ul {list-style: none;}
+header .menu li {float: left; margin: 0 20px; padding-bottom: 3px;}
+header .menu li a, header .menu-mobile li a {text-decoration: none; font-size: 15px; text-transform: uppercase; color: #D92534;}
+header .menu li:hover {border-bottom: 2px solid #D92534;}
+header .menu-mobile {
+    display: none; 
+    width: 32px; 
+    height: 32px; 
+    background-image: url('../_images/menu.png'); 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    cursor: pointer;
+}
+header .menu-mobile ul {display: none; position: absolute; width: 100%; background-color: #FFF; top: 90px; left: 0;}
+header .menu-mobile li {text-align: center; padding: 10px 0;}
+header .menu-mobile li:first-of-type {padding-top: 0;}
+
+/* SEÇÃO DO MOSAICO INICIAL: */
+.section-mosaico {width: 100%;}
+.section-mosaico .figure-box-wrapper {width: calc(100% / 6); float: left;}
+.section-mosaico .figure-box-single {
+    width: 100%; 
+    padding-top: 100%; 
+    background-color: #DDD; 
+    background-position: center; 
+    background-size: cover; 
+    border: 5px solid #FFF;
+}
+
+/* SEÇÃO SERVIÇOS PRINCIPAIS: */
+.section-servicos {width: 100%;}
+.section-servicos > .container-size {max-width: 900px;}
+.servicos-wrapper {display: flex; flex-direction: row;  flex-wrap: nowrap; justify-content: center; align-items: center; position: relative; top: -50px;}
+.servico-single {width: 33.333%; text-align: center; color: #959698;}
+.servico-single h2 {font-size: 20px; font-weight: 400; margin-top: 10px;}
+.servico-single h2::after {content: ''; display: block; margin: 5px auto; background-color: #F2B705; width: 25px; height: 2px;}
+.servico-single p {font-size: 14px; font-weight: 300; margin-top: 10px; text-align: justify;}
+.servico-single:nth-child(2n + 1) {background-color: rgb(35, 35, 35); padding: 30px 2%;}
+.servico-single:nth-child(2) {background-color: rgb(13, 13, 13); padding: 40px 2%;}
+
+
+/* TRATAMENTO RESPONSIVO: */
+
+@media screen and (max-width: 768px) {
+
+    /* HEADER: */
+    header .menu {display: none;}
+    header .menu-mobile {display: block;}
+
+    /* SEÇÃO SERVIÇOS PRINCIPAIS: */
+    .servicos-wrapper {flex-direction: column; position: static;}
+    .servico-single {width: 100%;}
+    .servico-single:nth-child(2n + 1), .servico-single:nth-child(2) {padding: 30px 20%;}
+    .servico-single h2 {font-size: 21px;}
+    .servico-single p {text-align: center; padding: 0 10px;}
+
+}
